@@ -10,7 +10,9 @@ import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.*;
@@ -28,6 +30,14 @@ public class BaseClass {
 		p.load(file);
 		//Logger
 		log=LogManager.getLogger(this.getClass());
+		
+		ChromeOptions chromeOptions=new ChromeOptions();
+		chromeOptions.setExperimentalOption("excludeSwitches",new String[] {"enable-automation"});
+		chromeOptions.addArguments("--disable-notifications");
+		
+		EdgeOptions edgeOptions=new EdgeOptions();
+		edgeOptions.setExperimentalOption("excludeSwitches",new String[] {"enable-automation"});
+		edgeOptions.addArguments("--disable-notifications");
 		
 		if(p.getProperty("execution_env").equalsIgnoreCase("remote"))
 	 	{	
@@ -61,8 +71,8 @@ public class BaseClass {
 		//launching browser based on condition - locally
 		switch(br.toLowerCase())
 		{
-		case "chrome": driver=new ChromeDriver(); break;
-		case "edge": driver=new EdgeDriver(); break;
+		case "chrome": driver=new ChromeDriver(chromeOptions); break;
+		case "edge": driver=new EdgeDriver(edgeOptions); break;
 		default: System.out.println("No matching browser..");
 					return;
 		}

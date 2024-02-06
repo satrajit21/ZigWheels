@@ -1,5 +1,7 @@
 package Utilities;
 
+import java.util.List;
+
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
@@ -34,6 +36,10 @@ public class ExtendReportManager extends BaseClass  implements ITestListener
 		extent.setSystemInfo("Tester Name","Satrajit");
 		extent.setSystemInfo("os","Windows10");
 		extent.setSystemInfo("Browser name","Chrome,Edge");
+		List<String> includedGroups = context.getCurrentXmlTest().getIncludedGroups();
+		if (!includedGroups.isEmpty()) {
+			extent.setSystemInfo("Groups", includedGroups.toString());
+		}
 					
 	}
 
@@ -41,6 +47,7 @@ public class ExtendReportManager extends BaseClass  implements ITestListener
 	public void onTestSuccess(ITestResult result) {
 		
 		test = extent.createTest(result.getName()); // create a new enty in the report
+		test.assignCategory(result.getMethod().getGroups()); // to display groups in report
 		test.log(Status.PASS, "Test case PASSED is:" + result.getName()); // update status p/f/s
 		
 		try {

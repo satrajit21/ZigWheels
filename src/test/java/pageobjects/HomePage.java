@@ -119,12 +119,6 @@ public class HomePage extends BasePage {
 				break;
 			}
 		}
-		Set<String> windowids=driver.getWindowHandles();
-		for(String win:windowids) {
-			if(!win.equalsIgnoreCase(Homepage_windowid)) {
-				driver.switchTo().window(win);
-			}
-		}
 		
 	}
 	
@@ -136,12 +130,6 @@ public class HomePage extends BasePage {
 		highlightElement(UpcomingBikes);
 		ts.ScreenShot("HoverOnNewBikesandclickonUpcomingBikes.png");
 		UpcomingBikes.click();
-		Set<String> windowids=driver.getWindowHandles();
-		for(String win:windowids) {
-			if(!win.equalsIgnoreCase(Homepage_windowid)) {
-				driver.switchTo().window(win);
-			}
-		}
 	}
 
 }

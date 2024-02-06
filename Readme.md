@@ -18,7 +18,7 @@ The project uses various dependencies and libraries to facilitate automation.
   - Purpose: Used for reading and writing Excel files, facilitating data-driven testing.
  
 - *TestNG*
-  - Version: 7.7.1
+  - Version: 7.8.0
   - Purpose: Framework for test automation that allows for parallel execution and flexible test configuration.
  
 - *Extent Report*
@@ -26,7 +26,7 @@ The project uses various dependencies and libraries to facilitate automation.
   - Purpose: Generates interactive and detailed HTML reports to enhance test result analysis.
  
 - *Selenium*
-  - Version: 4.15.0
+  - Version: 4.16.1
   - Purpose: Enables interaction with web elements, navigation, and form submission in the browser.
  
 - *Loggers*
