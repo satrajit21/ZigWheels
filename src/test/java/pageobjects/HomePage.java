@@ -66,11 +66,13 @@ public class HomePage extends BasePage {
 	//Action methods
 	WebDriverWait mywait=new WebDriverWait(driver,Duration.ofSeconds(20));
 	
+	//Verifying the title of ZigWheels.com
 	public void verify_title() {
 		mywait.until(ExpectedConditions.visibilityOf(ZigWheelLogo));
 		Assert.assertEquals(PageTitle,"New Cars & Bikes, Prices, News, Reviews, Buy & Sell Used Cars - ZigWheels.com","Page Title not verified");
 	}
 	
+	//Handling the loginpopup
 	public void handleloginpopup() {
 		try {
 			if(loginpopup.isDisplayed()) {
@@ -79,6 +81,7 @@ public class HomePage extends BasePage {
 		}catch(Exception e) {}
 	}
 	
+	//Automating the login functionality and testing it with negetive inputs
 	public  void Login() throws IOException, InterruptedException {
 		Takescreenshot ts=new Takescreenshot(driver);
 		highlightElement(LoginBtn);
@@ -99,6 +102,8 @@ public class HomePage extends BasePage {
 		ts.ScreenShot("InvalidCredentials.png");
 	}
 	
+	
+	//Capturing the error message displayed on giving the negetive input value
 	public void captureerrormessage() throws IOException {
 		highlightElement(errormsg);
 		System.out.println("Error Message---->"+errormsg.getText());
@@ -106,6 +111,8 @@ public class HomePage extends BasePage {
 		
 	}
 	
+	
+	//Hovering on the Used Cars tab and clicking on Chennai
 	public void UsedCarsCity() throws InterruptedException, IOException {
 		Takescreenshot ts=new Takescreenshot(driver);
 		Actions act=new Actions(driver);
@@ -122,6 +129,8 @@ public class HomePage extends BasePage {
 		
 	}
 	
+	
+	//Hovering on New Bikes and clicking on Upcoming bikes
 	public void NewBikes() throws InterruptedException, IOException {
 		Takescreenshot ts=new Takescreenshot(driver);
 		Actions act=new Actions(driver);

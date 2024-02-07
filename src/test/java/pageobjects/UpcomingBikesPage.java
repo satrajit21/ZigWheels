@@ -48,10 +48,13 @@ public class UpcomingBikesPage extends BasePage {
 	
 	//Action Methods
 	
+	//Navigating back to homepage
 	public void returntohomepage() {
 		ZigWheelLogo.click();
 	}
 	
+	
+	//filtering the manufacturer dropdown by selecting "Honda" from the dropdown
 	public void filtermanufacturer() throws InterruptedException, IOException {
 		Select s=new Select(Manufacturer_dropdown);
 		s.selectByVisibleText(ExcelUtils.getCellData(xfile,"Sheet1", 0, 1));
@@ -61,6 +64,8 @@ public class UpcomingBikesPage extends BasePage {
 		Assert.assertEquals(filterheadingtext.getText(),"Honda Upcoming Bikes in India");
 		
 	}
+	
+	//Scrolling down in the webpage and clicking on the viewmoreBtn
 	public void clickonviewmoreBtn() throws InterruptedException, IOException {
 		Takescreenshot ts=new Takescreenshot(driver);
 		JavascriptExecutor js=(JavascriptExecutor)driver;
@@ -71,6 +76,8 @@ public class UpcomingBikesPage extends BasePage {
 		ts.ScreenShot("UpcomingModelsforHonda.png");
 	}
 	
+	
+	//Sorting out the bike models that are less than 4Lakhs
 	public void displaybikedetails() throws IOException {
 		int j=3;
 		for(int i=0;i<Bike_Names.size();i++) {

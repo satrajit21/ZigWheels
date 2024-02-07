@@ -32,10 +32,14 @@ public class UsedCarsPage extends BasePage {
 	String xfile=System.getProperty("user.dir")+"\\TestData\\zig.xlsx";
 	//Action Methods
 	//WebDriverWait mywait=new WebDriverWait(driver,Duration.ofSeconds(20));
+	
+	//Navigate to homepage
 	public void returntohomepage() {
 		ZigWheelLogo.click();
 	}
 	
+	
+	//Displaying all the popular models in the console
 	public void displaypopularmodels() throws InterruptedException, IOException {
 		JavascriptExecutor js=(JavascriptExecutor)driver;
 		Takescreenshot ts=new Takescreenshot(driver);

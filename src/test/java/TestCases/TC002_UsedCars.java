@@ -12,6 +12,7 @@ public class TC002_UsedCars extends TC001_HomePage {
 	void test5() throws IOException, InterruptedException {
 		up=new UsedCarsPage(driver);
 		up.displaypopularmodels();
+		log.info("Displaying the popular models in the console");
 	}
 
 	
@@ -19,5 +20,6 @@ public class TC002_UsedCars extends TC001_HomePage {
 	void test6() throws IOException {
 		up=new UsedCarsPage(driver);
 		up.returntohomepage();
+		log.info("Navigating back to homepage");
 	}
 }

@@ -22,6 +22,8 @@ public class BaseClass {
 	public Properties p;
 	public Logger log;
 	public int choice;
+	
+	//Launching the browers one by one
 	@BeforeTest (groups= {"Master"})
 	@Parameters({"browser","os"})
 	public void setup(String br, String os) throws InterruptedException, IOException {
@@ -82,12 +84,12 @@ public class BaseClass {
 		
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 		driver.manage().window().maximize();
-		try {
-			driver.get(p.getProperty("altUrl"));
-		}catch(Exception e) {}
+		
 		driver.get(p.getProperty("Url"));
 		
 	}
+	
+	//Closing the browser
 	@AfterTest(groups= {"Master"})        
 	public void teardown() {
 		driver.quit();
