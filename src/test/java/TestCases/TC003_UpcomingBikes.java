@@ -14,7 +14,7 @@ public class TC003_UpcomingBikes extends TC002_UsedCars {
 		up.filtermanufacturer();
 		log.info("filtering the bikes by the brand");
 	}
-	@Test(priority=7,dependsOnMethods= {"test7"},groups= {"Master","Regression"})
+	@Test(priority=7,dependsOnMethods= {"FilteringUpcomingModelsByBrand"},groups= {"Master","Regression"})
 	void DisplayUpcomingBikeModels() throws IOException, InterruptedException {
 		up=new UpcomingBikesPage(driver);
 		up.clickonviewmoreBtn();

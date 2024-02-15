@@ -87,3 +87,10 @@
 10:37:09.651 [main] DEBUG org.apache.poi.openxml4j.opc.ZipPackage - Save part 'xl/worksheets/sheet2.xml'
 10:37:09.651 [main] DEBUG org.apache.poi.openxml4j.opc.ZipPackage - Save part 'xl/worksheets/sheet3.xml'
 10:37:09.653 [main] INFO  TestCases.TC003_UpcomingBikes - testing the login functionality and capturing the error message
+11:59:20.064 [main] INFO  TestCases.TC003_UpcomingBikes - Hovering on UsedCars tab and clicking on Chennai
+12:00:41.078 [main] INFO  TestCases.TC003_UpcomingBikes - Navigating back to homepage
+12:01:03.902 [main] INFO  TestCases.TC003_UpcomingBikes - hovering on NewBikes and clicking on Upcoming bikes
+12:06:07.466 [main] INFO  TestCases.TC003_UpcomingBikes - Verifying the page title and handling the login popup
+12:06:23.544 [main] INFO  TestCases.TC003_UpcomingBikes - Hovering on UsedCars tab and clicking on Chennai
+12:07:14.893 [main] INFO  TestCases.TC003_UpcomingBikes - Navigating back to homepage
+12:08:23.151 [main] INFO  TestCases.TC003_UpcomingBikes - Navigating back to homepage
